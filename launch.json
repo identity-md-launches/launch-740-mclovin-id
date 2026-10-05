@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "McLovinId",
+    "name": "McLovin.id",
+    "symbol": "MCLOVIN",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "125270724187523965593206901"
+  },
+  "economics": {
+    "poolBps": 8800,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x70bcbde387539d95ffe6d43edbf7c6aa2da87a09"
+  },
+  "notes": "McLovin.id (MCLOVIN) custom token launch. Token: src/McLovinId.sol, contract McLovinId, OpenZeppelin v5.2.0 ERC20 (vendored under lib/openzeppelin-contracts as plain files). The constructor takes no arguments and mints the whole supply of 1,000,000,000 MCLOVIN at 18 decimals, i.e. 1000000000000000000000000000 minor units (1e27), once to msg.sender; through ProjectFactory.launchCustom that is the factory. Compiled with solc 0.8.26, optimizer 200 runs, evm cancun, bytecode_hash none. The token has no owner, roles, mint, burn, burnFrom, pause, blocklist, freeze, transfer toggle, fee, tax, reflection, proxy, DELEGATECALL or SELFDESTRUCT; every transfer and transferFrom moves exactly the amount requested, so no launch-address exemptions are needed and totalSupply cannot change after construction. Application contracts: none; the accepted tree contains only the token, its deploy script and tests. No initialization calls. Pool: paired with the pair token at 0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7 as the job requires (not ETH), fee tier 3000 (0.3%) with the standard tickSpacing 60. pool.initialPrice is provenance only: it is sqrt(initialMarketCapWei / totalSupply) * 2^96 = sqrt(2500e18 / 1e27) * 2^96 with the token as currency0 and the pair token as currency1; if the CREATE2 token address sorts above the pair token the inverse, 50108289675009586237282760313921, applies. The deployer derives the opening price from economics.initialMarketCapWei and token.totalSupply. Economics are copied verbatim from the job: 8800 bps of supply seeds the single-sided pool at an opening market cap of 2500e18 pair-token minor units, and the rest of the requester's share goes to 0x70bcbde387539d95ffe6d43edbf7c6aa2da87a09. The swarm's share is taken by the factory and is not written here."
+}
